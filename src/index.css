@@ -5,10 +5,14 @@ body {
 }
 
 .App {
-  text-align: center;
   width: 500px;
   margin: 0 auto;
   padding-top: 50px;
+}
+
+.contactForm {
+  margin: 20px auto;
+
 }
 
 .search-bar {
@@ -19,6 +23,20 @@ body {
   font-size: 18px;
   padding: 0 10px;
   box-sizing: border-box;
+}
+
+.contact-field {
+  height: 25px;
+  width: 80%;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.contact-label {
+
 }
 
 .contact-list {

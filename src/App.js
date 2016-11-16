@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContactList from './ContactList';
 import SearchBar from './SearchBar';
+import AddNewContact from './AddNewContact';
 import axios from 'axios';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    debugger;
+
   }
 
   handleSearchBarChange(event) {
@@ -44,6 +45,10 @@ class App extends Component {
     debugger;
     return (
       <div className="App">
+        <h1>Contacts</h1>
+        <div className='contactForm'>
+          <AddNewContact />
+        </div>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} />
         <ContactList contacts={this.getFilteredContacts()} />
       </div>
@@ -51,7 +56,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://limitless-bayou-36199.herokuapp.com/api/contacts')
+    axios.get('localhost:3001')
     .then(resp => {
       this.setState({
         searchText: this.state.searchText,
