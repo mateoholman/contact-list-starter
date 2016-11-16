@@ -14,4 +14,10 @@ const Contact = (props) => {
   );
 }
 
+Contact.propTypes = {
+  avatar: React.PropTypes.string,
+  name: React.PropTypes.string.isRequired,
+  occupation: React.PropTypes.string.isRequired
+}
+
 export default Contact;
