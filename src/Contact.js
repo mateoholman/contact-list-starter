@@ -15,9 +15,9 @@ const Contact = (props) => {
 }
 
 Contact.propTypes = {
-  avatar: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
-  occupation: React.PropTypes.string.isRequired
+  occupation: React.PropTypes.string.isRequired,
+  avatar: React.PropTypes.string
 }
 
 export default Contact;

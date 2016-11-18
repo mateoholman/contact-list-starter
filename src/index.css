@@ -4,6 +4,17 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
+.submit-button {
+  float: right;
+  margin: 5px 10px;
+  height: 25px;
+  border-radius: 5px;
+}
+
 .App {
   width: 500px;
   margin: 0 auto;
@@ -12,12 +23,12 @@ body {
 
 .contactForm {
   margin: 20px auto;
-
 }
 
 .search-bar {
   height: 35px;
   width: 100%;
+  margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 18px;
@@ -26,6 +37,8 @@ body {
 }
 
 .contact-field {
+  float: right;
+  margin: 5px 0;
   height: 25px;
   width: 80%;
   border: 2px solid #ddd;
@@ -33,10 +46,6 @@ body {
   font-size: 18px;
   padding: 0 10px;
   box-sizing: border-box;
-}
-
-.contact-label {
-
 }
 
 .contact-list {
