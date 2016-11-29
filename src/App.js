@@ -54,16 +54,18 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  handleDelContact(contact) {
-    //Remove a contact when the remove button is clicked
-    console.log('App registered click:' + contact);
-    //When the 'delete' button is clicked, we want it to send us the 'id' or
-    //'name' of the contact that was clicked. Then, we can slice that contact
-    //out of the contact list and return a new contact list.
+  handleDelContact(contactId) {
+    //Updates the contact list locally, but doesn't remove it from the database.
 
     //Get the current contact list
-    //const contacts = this.state.contacts;
-    //Find the index of the deleted contact in the contacts list
+    const contacts = this.state.contacts;
+    //Find the index of the contact that we want to delete
+    const index = contacts.map((person) => person._id).indexOf(contactId);
+    //Create a new contacts array without the contact we want to delete
+    const newContacts = contacts.slice(0, index).concat(contacts.slice(index+1));
+    //Update the Contact List with the new contacts array
+    this.setState({contacts: newContacts});
+
   }
 
   render() {
