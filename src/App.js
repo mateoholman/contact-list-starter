@@ -54,6 +54,18 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  handleDelContact(contact) {
+    //Remove a contact when the remove button is clicked
+    console.log('App registered click:' + contact.name);
+    //When the 'delete' button is clicked, we want it to send us the 'id' or
+    //'name' of the contact that was clicked. Then, we can slice that contact
+    //out of the contact list and return a new contact list.
+
+    //Get the current contact list
+    //const contacts = this.state.contacts;
+    //Find the index of the deleted contact in the contacts list
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,7 +74,7 @@ class App extends Component {
           <ContactForm onAdd={this.handleAddContact.bind(this)}/>
         </div>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} />
-        <ContactList contacts={this.getFilteredContacts()} />
+        <ContactList contacts={this.getFilteredContacts()} handleDelContact={this.handleDelContact}/>
       </div>
     );
   }

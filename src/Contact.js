@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 
-const Contact = (props) => {
-  return (
-    <Link to={`/profile/${props.id}`} className='contact-link'>
+//Need to add onClick
+
+class Contact extends Component {
+
+  render() {
+
+    return (
       <li className="contact">
         <div className="image-cropper">
-          <img src={props.avatar} alt="avatar" />
+          <img src={this.props.avatar} alt="avatar" />
         </div>
         <div className="contact-info">
-          <h2>{props.name}</h2>
-          {props.occupation}
+          <Link to={`/profile/${this.props.id}`} className='contact-link'>
+            <h2>{this.props.name}</h2>
+          </Link>
+          {this.props.occupation}
+        </div>
+        <div className="crud-section">
+          <button className='delete-btn' onClick={this.props.handleDelContact}>Delete</button>
         </div>
       </li>
-    </Link>
-  );
-}
+    );
+  }
+} //End Contact
 
 Contact.propTypes = {
   id: React.PropTypes.string.isRequired,

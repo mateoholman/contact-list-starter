@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Contact from './Contact';
 
-const ContactList = (props) => {
-  return (
+class ContactList extends Component {
+
+  render() {
+    const { contacts } = this.props;
+    return (
     <ul className="contact-list">
-      {props.contacts.map(contact => {
+      {contacts.map(contact => {
         return (
           <Contact
             key={contact._id}
@@ -12,11 +15,12 @@ const ContactList = (props) => {
             name={contact.name}
             avatar={contact.avatar}
             occupation={contact.occupation}
+            handleDelContact={this.props.handleDelContact}
           />
         )
       })}
     </ul>
-  );
+  );}
 }
 
 ContactList.propTypes = {
