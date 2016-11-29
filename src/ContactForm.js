@@ -27,6 +27,11 @@ class ContactForm extends Component {
     event.preventDefault();
     const { name, occupation, avatar} = this.state;
     this.props.onAdd({ name, occupation, avatar });
+    this.setState({
+        name: '',
+        occupation: '',
+        avatar: ''
+    });
   }
 
   render() {

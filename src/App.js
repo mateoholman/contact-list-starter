@@ -64,7 +64,18 @@ class App extends Component {
     //Create a new contacts array without the contact we want to delete
     const newContacts = contacts.slice(0, index).concat(contacts.slice(index+1));
     //Update the Contact List with the new contacts array
-    this.setState({contacts: newContacts});
+    //this.setState({contacts: newContacts});
+
+    axios.delete(`http://localhost:3001/api/contacts/${contactId}`)
+      .then(resp => {
+        this.setState(prev => {
+          return {
+            ...prev,
+            contacts: newContacts
+          };
+        });
+      })
+      .catch(err => console.log(err));
 
   }
 
