@@ -15,7 +15,7 @@ class ContactList extends Component {
             name={contact.name}
             avatar={contact.avatar}
             occupation={contact.occupation}
-            handleDelContact={this.props.handleDelContact}
+            handleDelContact={this.props.handleDelContact.bind(this)}
           />
         )
       })}

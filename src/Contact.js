@@ -5,6 +5,12 @@ import { Link } from 'react-router';
 
 class Contact extends Component {
 
+  //Pass the id of the contact to be deleted back to the App
+  handleClick(event) {
+    event.preventDefault();
+    this.props.handleDelContact(this.props.id);
+  }
+
   render() {
 
     return (
@@ -19,7 +25,7 @@ class Contact extends Component {
           {this.props.occupation}
         </div>
         <div className="crud-section">
-          <button className='delete-btn' onClick={this.props.handleDelContact}>Delete</button>
+          <button className='delete-btn' onClick={this.handleClick.bind(this)}>Delete</button>
         </div>
       </li>
     );

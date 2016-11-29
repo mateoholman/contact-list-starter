@@ -56,7 +56,7 @@ class App extends Component {
 
   handleDelContact(contact) {
     //Remove a contact when the remove button is clicked
-    console.log('App registered click:' + contact.name);
+    console.log('App registered click:' + contact);
     //When the 'delete' button is clicked, we want it to send us the 'id' or
     //'name' of the contact that was clicked. Then, we can slice that contact
     //out of the contact list and return a new contact list.
@@ -74,7 +74,7 @@ class App extends Component {
           <ContactForm onAdd={this.handleAddContact.bind(this)}/>
         </div>
         <SearchBar value={this.state.searchText} onChange={this.handleSearchBarChange.bind(this)} />
-        <ContactList contacts={this.getFilteredContacts()} handleDelContact={this.handleDelContact}/>
+        <ContactList contacts={this.getFilteredContacts()} handleDelContact={this.handleDelContact.bind(this)}/>
       </div>
     );
   }
